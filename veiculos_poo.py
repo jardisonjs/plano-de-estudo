@@ -58,7 +58,7 @@ class Veiculo:
             tempo_carregamento = resultado[0]
             custo_total = tempo_carregamento * custo_por_hora
             sql_update = "UPDATE veiculos SET status = 'Carregamento Finalizado' WHERE id = ?"
-            consulta.execute(sql_update, (id,))
+            consulta.execute(sql_update, id,)
             conexao.commit()
             print(f"Carregamento finalizado. Custo total: R$ {custo_total:.2f}")
         else:
